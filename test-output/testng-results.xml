@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="274607" started-at="2021-06-29T16:06:09 IST" finished-at="2021-06-29T16:10:44 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="274607" started-at="2021-06-29T16:06:09 IST" finished-at="2021-06-29T16:10:44 IST">
+      <class name="TestCases.CheckAddNewEmailbutton">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.CheckAddNewEmailbutton@5fd4f8f5]" name="beforeClass" is-config="true" duration-ms="79557" started-at="2021-06-29T16:07:54 IST" finished-at="2021-06-29T16:09:14 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.CheckAddNewEmailbutton@5fd4f8f5]" name="beforeMethod" is-config="true" duration-ms="40409" started-at="2021-06-29T16:09:14 IST" finished-at="2021-06-29T16:09:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="checkAddNewEmailbutton()[pri:1, instance:TestCases.CheckAddNewEmailbutton@5fd4f8f5]" name="checkAddNewEmailbutton" duration-ms="47578" started-at="2021-06-29T16:09:56 IST" finished-at="2021-06-29T16:10:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkAddNewEmailbutton -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestCases.CheckAddNewEmailbutton@5fd4f8f5]" name="afterClass" is-config="true" duration-ms="90" started-at="2021-06-29T16:10:44 IST" finished-at="2021-06-29T16:10:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- TestCases.CheckAddNewEmailbutton -->
+      <class name="TestCases.TestCase1">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestCases.TestCase1@72cde7cc]" name="beforeSuite" is-config="true" duration-ms="22" started-at="2021-06-29T16:06:09 IST" finished-at="2021-06-29T16:06:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.TestCase1@72cde7cc]" name="beforeClass" is-config="true" duration-ms="42536" started-at="2021-06-29T16:06:09 IST" finished-at="2021-06-29T16:06:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.TestCase1@72cde7cc]" name="beforeMethod" is-config="true" duration-ms="33531" started-at="2021-06-29T16:06:52 IST" finished-at="2021-06-29T16:07:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="CreateContact()[pri:1, instance:TestCases.TestCase1@72cde7cc]" name="CreateContact" duration-ms="27520" started-at="2021-06-29T16:07:25 IST" finished-at="2021-06-29T16:07:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateContact -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestCases.TestCase1@72cde7cc]" name="afterClass" is-config="true" duration-ms="788" started-at="2021-06-29T16:07:53 IST" finished-at="2021-06-29T16:07:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestCases.TestCase1@72cde7cc]" name="afterSuite" is-config="true" duration-ms="1572" started-at="2021-06-29T16:10:44 IST" finished-at="2021-06-29T16:10:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- TestCases.TestCase1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
