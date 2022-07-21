@@ -28,12 +28,10 @@ import ObjectRepo.ObjectRepo;
 
 public class TestCase1 extends ReusableUtil {
 
-	@Test(priority = 1)
-//			,dataProvider="getData",dataProviderClass=FrameAnnotations.class)
-	public void CreateContact() throws InterruptedException, IOException {
+	@Test(priority = 1,dataProvider="getData",dataProviderClass=FrameAnnotations.class)
+//			
+	public void CreateContact(Hashtable<String,String> testData) throws InterruptedException, IOException {
 //System.out.println(DataForTestCase);
- Hashtable<String,String> testData=FrameAnnotations.testdata;
-		StartTestcase(this.getClass().getSimpleName());
 		test.log(LogStatus.INFO, "Started test case execution");
 		CheckUserIsLoggedIn();
 		OpenSideMenu();

@@ -17,6 +17,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -75,6 +76,7 @@ public static Hashtable<String,String> testdata;
 	super.driver=OpenBrowser();
 		Thread.sleep(5000);
 		GetUrl();
+		
 	
 		//test=rep.startTest(getTestCaseName(testcasename)); 
 	}
@@ -89,9 +91,10 @@ public static Hashtable<String,String> testdata;
 	
 	
 	@BeforeClass
-	public void beforeClass() throws IOException {
+	public void beforeClass(Method testCaseName) throws IOException {
 		rep=ExtentManager.getInstance();
-		testdata= getTestMethod(); 
+		
+		//testdata= getTestMethod(); 
 		
 	}
 	
@@ -102,19 +105,19 @@ public static Hashtable<String,String> testdata;
 		rep.flush();
 	}
 
-//	@DataProvider(name="getData")
-	public static Hashtable<String, String> getTestMethod() throws IOException {
+	@DataProvider(name="getData")
+	public static Hashtable<String, String> getTestMethod(Method testCaseName) throws IOException {
+		testcasename=testCaseName.getName();
 		xls=new Xls_reader();
-		init(); 
+		init();
+		testdata= DataUtil.getTestData(xls, prop.getProperty("sheetName"), testcasename);
+		return testdata; 
 		
-		testCaseNameList=getTestCaseName(); 
-		testcasename=testCaseNameList.get(baseTestCaseIndex);
-		String testCaseTrimmedName=testcasename.substring(testcasename.indexOf(".")+1);
-		return DataUtil.getTestData(xls,prop.getProperty("sheetName"),testCaseTrimmedName);
 		
+	
 	}
 
-	public static List<String> getTestCaseName() { 
+	/*public static List<String> getTestCaseName() { 
 		try   
 		{  
 		//creating a constructor of file class and parsing an XML file  
@@ -147,7 +150,7 @@ public static Hashtable<String,String> testdata;
 		e.printStackTrace();  
 		}
 		return testCaseNameList;  
-		}  
+		} */ 
   
 	}
 

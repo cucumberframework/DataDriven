@@ -14,7 +14,7 @@ public class DataUtil {
 	private static Hashtable<String,String> table=null;
 
 	public static Hashtable<String,String> getTestData(Xls_reader xls, String sheetName, String testName) throws IOException {
-		FrameAnnotations.baseTestCaseIndex++;
+		//FrameAnnotations.baseTestCaseIndex++;
 		//String name = ctx.getCurrentXmlTest().getSuite().getName();
 		 TestCaseStartnumber= xls.getRowData(testName); 
 		 KeyStartRowNumber=TestCaseStartnumber+1; 
