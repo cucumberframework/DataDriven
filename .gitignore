@@ -1,0 +1,4 @@
+ignore.txt
+Reports/
+test-output/
+test-output/testng-results.xml
