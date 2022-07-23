@@ -16,7 +16,7 @@ public class CheckAddNewEmailbutton extends ReusableUtil {
 	@Test(priority = 1)
 	public void checkAddNewEmailbutton() throws InterruptedException {
 		System.out.println("CheckAddNewEmailbutton test case execution");
-		Hashtable<String,String> testData=FrameAnnotations.testdata;
+		//Hashtable<String,String> testData=FrameAnnotations.testdata;
 		StartTestcase(this.getClass().getSimpleName());
 		test.log(LogStatus.INFO, "Started test case execution");
 		CheckUserIsLoggedIn();
