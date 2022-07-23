@@ -6,7 +6,7 @@
       <class name="TestCases.TestCase1">
         <methods>
           <include name="beforeClass"/>
-          <include name="CreateContact"/>
+          <include name="CreateContact" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>

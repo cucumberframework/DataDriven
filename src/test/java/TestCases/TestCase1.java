@@ -1,6 +1,7 @@
 package TestCases;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -30,8 +31,9 @@ public class TestCase1 extends ReusableUtil {
 
 	@Test(priority = 1,dataProvider="getData",dataProviderClass=FrameAnnotations.class)
 //			
-	public void CreateContact(Hashtable<String,String> testData) throws InterruptedException, IOException {
+	public void CreateContact(HashMap<String,String> testData) throws InterruptedException, IOException {
 //System.out.println(DataForTestCase);
+		testData.get("Firstname"); 
 		test.log(LogStatus.INFO, "Started test case execution");
 		CheckUserIsLoggedIn();
 		OpenSideMenu();
@@ -42,9 +44,9 @@ public class TestCase1 extends ReusableUtil {
 		//driver.findElement(By.linkText("Create")).click();
 		// driver.navigate().refresh();
 		driver.switchTo().defaultContent();
-		ObjectRepo.FirstName.sendKeys(testData.get("Firstname"));
+	/*	ObjectRepo.FirstName.sendKeys(testData.get("Firstname"));
 		ObjectRepo.Middlename.sendKeys(testData.get("MiddleName"));
-		ObjectRepo.LastName.sendKeys(testData.get("LastName"));
+		ObjectRepo.LastName.sendKeys(testData.get("LastName"));*/
 		ClickWebElement(ObjectRepo.SaveButton);
 		ClickWebElement(ExpliciteWait(driver, ObjectRepo.ThrashIcon, 10));
 		Thread.sleep(2000);

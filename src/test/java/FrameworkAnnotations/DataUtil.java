@@ -2,7 +2,9 @@ package FrameworkAnnotations;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 
 import org.testng.ITestContext;
 
@@ -11,9 +13,12 @@ public class DataUtil {
 	private static int KeyStartRowNumber; 
 	private static int ValueStartRowNumber; 
 	private static int rows =0; 
-	private static Hashtable<String,String> table=null;
-
-	public static Hashtable<String,String> getTestData(Xls_reader xls, String sheetName, String testName) throws IOException {
+	private static Map<String, String> table=null;
+	private static Object[][] data; 
+	private static String keys; 
+	private static String values; 
+	public static int  cellnumber;
+	public static Object[][] getTestData(Xls_reader xls, String sheetName, String testName) throws IOException {
 		//FrameAnnotations.baseTestCaseIndex++;
 		//String name = ctx.getCurrentXmlTest().getSuite().getName();
 		 TestCaseStartnumber= xls.getRowData(testName); 
@@ -21,18 +26,20 @@ public class DataUtil {
 		 ValueStartRowNumber=TestCaseStartnumber+2;
 		 int totalKeysColumn= xls.columnLastCellNumber(KeyStartRowNumber);
 		
-			//Object[][] data=new Object[2][1];
-			table=new Hashtable<String,String>();
-			for(int cellnumber=0;cellnumber<totalKeysColumn;cellnumber++) {
-				String keys=xls.getCellData(sheetName,KeyStartRowNumber,cellnumber);
-				String values=xls.getCellData(sheetName, ValueStartRowNumber, cellnumber);
-				table.put(keys, values);
+			data=new Object[1][0];
+			table=new HashMap<String,String>();
+			for( cellnumber=0;cellnumber<totalKeysColumn;cellnumber++) {
+				 keys=xls.getCellData(sheetName,KeyStartRowNumber,cellnumber);
+				 values=xls.getCellData(sheetName, ValueStartRowNumber, cellnumber);
+				 table.put(keys, values);
 			}
 			
 	
 		
-		//System.out.println(data[0][0]);
- 		return  table ;
+		
+ 		return  new Object[][]{
+ 	          {table}
+ 	      };  
 		
 	}
 

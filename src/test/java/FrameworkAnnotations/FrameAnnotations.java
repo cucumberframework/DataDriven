@@ -21,6 +21,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
@@ -55,7 +56,8 @@ public static ITestListener context;
 public static List<String> testCaseNameList=new ArrayList<String>(); 
 public static int globalTestCaseIndex;
 public static int baseTestCaseIndex=0; 
-public static Hashtable<String,String> testdata; 
+public static HashMap<String, String> testdata; 
+public static Object[][] obj; 
 
 
 	@BeforeSuite
@@ -91,7 +93,7 @@ public static Hashtable<String,String> testdata;
 	
 	
 	@BeforeClass
-	public void beforeClass(Method testCaseName) throws IOException {
+	public void beforeClass() throws IOException {
 		rep=ExtentManager.getInstance();
 		
 		//testdata= getTestMethod(); 
@@ -106,52 +108,18 @@ public static Hashtable<String,String> testdata;
 	}
 
 	@DataProvider(name="getData")
-	public static Hashtable<String, String> getTestMethod(Method testCaseName) throws IOException {
+	public static Object[][] getTestMethod(Method testCaseName) throws IOException {
 		testcasename=testCaseName.getName();
 		xls=new Xls_reader();
 		init();
-		testdata= DataUtil.getTestData(xls, prop.getProperty("sheetName"), testcasename);
-		return testdata; 
-		
+		obj= DataUtil.getTestData(xls, prop.getProperty("sheetName"), testcasename);
+		System.out.println(obj.toString());
+		return obj; 
 		
 	
 	}
 
-	/*public static List<String> getTestCaseName() { 
-		try   
-		{  
-		//creating a constructor of file class and parsing an XML file  
-		File file = new File("F:\\eclipse\\wrkspace\\DataDriven\\testng.xml");  
-		//an instance of factory that gives a document builder  
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();  
-		//an instance of builder to parse the specified xml file  
-		DocumentBuilder db = dbf.newDocumentBuilder();  
-		Document doc = db.parse(file);  
-		doc.getDocumentElement().normalize();  
-		System.out.println("Root element: " + doc.getDocumentElement().getNodeName());  
-		NodeList nodeList = doc.getElementsByTagName("class");  
-		// nodeList is not iterable, so we are using for loop  
-		for (int itr = 0; itr < nodeList.getLength(); itr++)   
-		{  
-			globalTestCaseIndex=nodeList.getLength();
-		Node node = nodeList.item(itr);  
-		System.out.println("\nNode Name :" + node.getNodeName());  
-		if (node.getNodeType() == Node.ELEMENT_NODE)   
-		{  
-			Element elementAttribute = (Element) nodeList.item(itr);
-            String ranking = elementAttribute.getAttribute("name");
-            System.out.println(ranking);
-            testCaseNameList.add(ranking);
-		}  
-		}  
-		}   
-		catch (Exception e)   
-		{  
-		e.printStackTrace();  
-		}
-		return testCaseNameList;  
-		} */ 
-  
+	  
 	}
 
 	

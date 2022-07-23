@@ -26,7 +26,7 @@ public class Xls_reader extends FrameAnnotations {
 	
 	public XSSFWorkbook getWorkbook() throws IOException {
 		if(workbook==null) {
-			fis=new FileInputStream(System.getProperty("user.dir"+"\\src\\test\\java\\ExternalFiles\\TestData.xlsx"));
+			fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\ExternalFiles\\TestData.xlsx");
 			workbook=new XSSFWorkbook(fis);
 			//workbook.getActiveSheetIndex();
 		}
